@@ -1,4 +1,4 @@
-const INITIAL_USERS = ["Umut", "Arkadas1", "Arkadas2"];
+const INITIAL_USERS = ["Umut", "Can", "Berke"];
 const STICKERS_PER_TEAM = 20;
 const SAVE_DEBOUNCE_MS = 500;
 
