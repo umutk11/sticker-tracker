@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1020">
+    <title>Panini WM 2026 Sticker Tracker</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">26</span>
+          <div>
+            <h1>Panini WM 2026</h1>
+            <p>Sticker Tracker</p>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <label class="user-picker">
+            <span>Aktif kullanıcı</span>
+            <select id="activeUserSelect" disabled></select>
+          </label>
+          <button id="addUserButton" class="button secondary" type="button" disabled>Kullanıcı ekle</button>
+          <div id="syncStatus" class="sync-status" role="status">Bağlanıyor…</div>
+        </div>
+      </header>
+
+      <main>
+        <section id="setupPanel" class="setup-panel hidden" aria-live="polite"></section>
+
+        <section id="offlineNotice" class="notice hidden">
+          Çevrimdışı - değişiklikler kaydedilemeyebilir.
+        </section>
+
+        <section id="mainContent" class="main-content hidden">
+          <nav class="tabs" aria-label="Uygulama bölümleri">
+            <button class="tab-button active" type="button" data-view="collection">Koleksiyon</button>
+            <button class="tab-button" type="button" data-view="trades">Takas</button>
+            <button class="tab-button" type="button" data-view="summary">Özet</button>
+          </nav>
+
+          <section class="summary-strip" id="summaryStrip"></section>
+
+          <section id="collectionView" class="view active">
+            <div class="filters">
+              <div class="segmented" role="group" aria-label="Filtreler">
+                <button class="filter-button active" type="button" data-filter="all">Tümü</button>
+                <button class="filter-button" type="button" data-filter="missing">Eksiklerim</button>
+                <button class="filter-button" type="button" data-filter="owned">Var olanlarım</button>
+                <button class="filter-button" type="button" data-filter="duplicates">Duplicatelerim</button>
+                <button class="filter-button" type="button" data-filter="trade">Takas fırsatları</button>
+              </div>
+              <label class="search-box">
+                <span>Arama</span>
+                <input id="searchInput" type="search" placeholder="Türkiye, turkiye-7, Meksika 12">
+              </label>
+            </div>
+
+            <div class="grid-wrap" aria-label="Sticker koleksiyon tablosu">
+              <div id="collectionGrid" class="collection-grid"></div>
+            </div>
+          </section>
+
+          <section id="tradesView" class="view">
+            <div class="trade-header">
+              <h2>Takas önerileri</h2>
+              <button id="copyTradesButton" class="button" type="button">Kopyala</button>
+            </div>
+            <div id="tradeCopyNotice" class="copy-notice" aria-live="polite"></div>
+            <div id="tradeSections" class="trade-sections"></div>
+          </section>
+
+          <section id="summaryView" class="view">
+            <div id="summaryDetail" class="summary-detail"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

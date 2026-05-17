@@ -1,0 +1,12 @@
+{
+  "name": "Panini WM 2026 Sticker Tracker",
+  "short_name": "Panini 2026",
+  "description": "Arkadaş grubuyla Panini Dünya Kupası 2026 sticker koleksiyonunu ve takaslarını takip et.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070a12",
+  "theme_color": "#0b1020",
+  "lang": "tr",
+  "orientation": "portrait"
+}
